@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.renderer.debug;
+package com.akylas.skymap.renderer.debug;
 
 import java.util.ArrayList;
 
@@ -24,11 +24,11 @@ import android.graphics.Paint;
 import android.os.SystemClock;
 import android.util.FloatMath;
 
-import com.google.android.stardroid.renderer.SkyRenderer;
-import com.google.android.stardroid.source.LinePrimitive;
-import com.google.android.stardroid.source.PointPrimitive;
-import com.google.android.stardroid.source.TextPrimitive;
-import com.google.android.stardroid.math.CoordinateManipulations;
+import com.akylas.skymap.renderer.SkyRenderer;
+import com.akylas.skymap.source.LinePrimitive;
+import com.akylas.skymap.source.PointPrimitive;
+import com.akylas.skymap.source.TextPrimitive;
+import com.akylas.skymap.math.CoordinateManipulations;
 
 // This class is for debugging the sky renderer.
 public class DebugSkyRenderer extends SkyRenderer {

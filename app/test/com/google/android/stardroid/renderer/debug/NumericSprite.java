@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.android.stardroid.renderer.debug;
+package com.akylas.skymap.renderer.debug;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -24,8 +24,8 @@ import android.graphics.Paint.Style;
 import android.graphics.drawable.Drawable;
 import android.opengl.GLUtils;
 
-import com.google.android.stardroid.renderer.util.TextureManager;
-import com.google.android.stardroid.renderer.util.TextureReference;
+import com.akylas.skymap.renderer.util.TextureManager;
+import com.akylas.skymap.renderer.util.TextureReference;
 
 import java.nio.CharBuffer;
 import java.nio.FloatBuffer;

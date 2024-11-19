@@ -1,18 +1,19 @@
 <resources>
     <!-- Main App Theme to make global changes easier -->
-    <style name = "AppTheme" parent="@android:style/Theme.Holo">
+    <style name = "AppTheme" parent="Theme.Material3.DayNight">
     </style>
 
+    <style name="MyTheme.ActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="elevation" >0dp</item>
+        <item name="background">@color/black_overlay</item>
+    </style>
     <style name="FullscreenTheme" parent="AppTheme">
-        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="actionBarStyle">@style/MyTheme.ActionBar</item>
+        <item name="windowActionBarOverlay">true</item>
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:windowBackground">@null</item>
         <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
         <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
-    </style>
-
-    <style name="FullscreenActionBarStyle" parent="android:Widget.Holo.ActionBar">
-        <item name="android:background">@color/black_overlay</item>
     </style>
 
     <style name="TableRow_RowHeading" parent="TableRow_Element">

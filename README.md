@@ -48,7 +48,6 @@ Create a file in the app directory called
 keys
     store-pwd=
     key-pwd=
-    analytics-key=
 
 and overwrite google-services.json with the correct file.
 

@@ -2,8 +2,8 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:key="stardroid.preferences">
   <PreferenceCategory>
-    <PreferenceScreen android:title="@string/location_prefs">
-      <PreferenceCategory>
+<!--    <PreferenceScreen android:title="@string/location_prefs">-->
+      <PreferenceCategory android:title="@string/location_prefs">
         <CheckBoxPreference
             android:defaultValue="false"
             android:title="@string/force_gps_pref"
@@ -43,20 +43,14 @@
             android:title="@string/use_magnetic_correction"
             android:key="use_magnetic_correction"/>
       </PreferenceCategory>
-    </PreferenceScreen>
+<!--    </PreferenceScreen>-->
     <CheckBoxPreference
         android:defaultValue="true"
         android:title="@string/use_sound_effects"
         android:key="sound_effects"/>
-    <!-- Keep in sync with value in utils.Analytics -->
-    <CheckBoxPreference
-        android:defaultValue="@string/analytics_enabled"
-        android:title="@string/enable_analytics"
-        android:summary="@string/enable_analytics_desc"
-        android:key="enable_analytics"/>
   </PreferenceCategory>
-  <PreferenceScreen android:key="sensor_prefs" android:title="@string/sensor_prefs">
-    <PreferenceCategory>
+<!--  <PreferenceScreen android:key="sensor_prefs" android:title="@string/sensor_prefs">-->
+    <PreferenceCategory android:title="@string/sensor_prefs">
       <CheckBoxPreference
           android:defaultValue="false"
           android:title="@string/disable_gyro_preference_title"
@@ -87,5 +81,5 @@
           android:entries="@array/viewing_direction"
           android:defaultValue="STANDARD" />
     </PreferenceCategory>
-  </PreferenceScreen>
+<!--  </PreferenceScreen>-->
 </PreferenceScreen>

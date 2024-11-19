@@ -59,7 +59,9 @@
     <string name="set_auto">Switching to automatic mode</string>
     <string name="menu_zoom_in">Zoom in</string>
     <string name="menu_zoom_out">Zoom out</string>
-    <string name="menu_toggle_dim">Toggle night mode</string>
+    <string name="menu_toggle_dim">Night mode</string>
+    <string name="menu_toggle_eink">EInk mode</string>
+    <string name="menu_request_location">Request location</string>
     <string name="zenith">ZENITH</string>
     <string name="nadir">NADIR</string>
     <string name="north">NORTH</string>

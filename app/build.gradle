@@ -1,26 +1,32 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
+    id 'kotlin-parcelize'
     id 'kotlin-kapt'
 }
 
 android {
-    compileSdkVersion 33
+    namespace "com.akylas.skymap"
+    android.buildFeatures.buildConfig true
 
     defaultConfig {
-        applicationId "com.google.android.stardroid"
-        minSdkVersion 26
-        targetSdkVersion 34
+        applicationId "com.akylas.skymap"
+        compileSdk 35
+        minSdkVersion 21
+        targetSdkVersion 35
         versionCode 1550
         versionName "1.10.4 - RC1"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    kotlinOptions {
+        jvmTarget = "21"
+    }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 
     signingConfigs {
@@ -46,8 +52,6 @@ android {
                 Properties properties = new Properties()
                 // Sky Map devs should create this file with the Google Analytics key
                 properties.load(project.file('no-checkin.properties').newDataInputStream())
-                def analyticsKey = properties.getProperty('analytics-key')
-                buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', analyticsKey
             }
         }
     }
@@ -72,12 +76,10 @@ android {
     productFlavors {
         // includes gms Google services
         gms {
-            resValue "string", "analytics_enabled", "true"
         }
 
         // uses only open source software
         fdroid {
-            resValue "string", "analytics_enabled", "false"
         }
     }
 }
@@ -88,13 +90,13 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 // Android support
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'androidx.preference:preference:1.1.1'
-    implementation "androidx.core:core-ktx:1.7.0"
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+    implementation "androidx.core:core-ktx:1.15.0"
 
 // Third-party
-    implementation 'com.google.guava:guava:30.1.1-jre'
-    def dagger_version = "2.40"
+    implementation 'com.google.guava:guava:32.0.1-jre'
+    def dagger_version = "2.50"
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     // For annotations not in Android but needed by Dagger
@@ -102,11 +104,7 @@ dependencies {
     // Lite version for Android - it's lighter (obviously) but also doesn't use reflection
     // which can cause no end of problems with minifiers like proguard.
     implementation 'com.google.protobuf:protobuf-javalite:3.13.0'
-
-// Flavor
-    gmsImplementation 'com.google.android.gms:play-services-analytics:18.0.0'
-    gmsImplementation 'com.google.android.gms:play-services-location:19.0.0'
-    gmsImplementation 'com.google.firebase:firebase-analytics:20.0.2'
+    implementation 'com.google.android.material:material:1.12.0'
 
 // Testing
     testImplementation 'junit:junit:4.13.1'

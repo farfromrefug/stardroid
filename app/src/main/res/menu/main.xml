@@ -22,11 +22,22 @@
           android:icon="@android:drawable/ic_menu_search"
           android:showAsAction="always"/>
 
+    <item android:id="@+id/menu_item_location"
+          android:orderInCategory="2"
+          android:title="@string/menu_request_location"
+          android:showAsAction="ifRoom" />
+
     <item android:id="@+id/menu_item_dim"
           android:orderInCategory="2"
           android:title="@string/menu_toggle_dim"
           android:icon="@android:drawable/ic_menu_view"
-          android:showAsAction="ifRoom"/>
+          android:showAsAction="ifRoom"
+          android:checkable="true"/>
+    <item android:id="@+id/menu_item_eink"
+          android:orderInCategory="2"
+          android:title="@string/menu_toggle_eink"
+          android:showAsAction="ifRoom"
+          android:checkable="true"/>
 
     <item android:id="@+id/menu_item_settings"
           android:orderInCategory="3"
@@ -51,10 +62,10 @@
           android:title="@string/menu_calibrate"
           android:showAsAction="never"/>
 
-    <item android:id="@+id/menu_item_diagnostics"
-          android:orderInCategory="8"
-          android:title="@string/menu_diagnostics"
-          android:showAsAction="never"/>
+<!--    <item android:id="@+id/menu_item_diagnostics"-->
+<!--          android:orderInCategory="8"-->
+<!--          android:title="@string/menu_diagnostics"-->
+<!--          android:showAsAction="never"/>-->
 
     <item android:id="@+id/menu_item_help"
           android:orderInCategory="9"
